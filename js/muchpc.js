@@ -20,6 +20,7 @@ Vue.directive( "sortable", function( value ) {
 //  Const declarations
 // -----------------------
 const locked_keys = ['FN'];
+const locked_keys = [];
 const unbindable_keys = ['Light'];
 const unbindable_desc = ['change a specific RGB setting'];
 const special_keys = {
