@@ -850,6 +850,13 @@ var app = new Vue({
         fileListener: null,
     },
     computed: {
+        hasErrors: function () {
+            // each layer must contain at least one of each mandatory key
+            return mandatory_keys
+                .map(this.findKeyByKeycode)
+                .map(this.onEachLayer)
+                .reduce((result, isValid) => (result || !isValid), false);
+        },
         ledClass: function () {
           return {
             'led-red': this.active_profile == 1,
