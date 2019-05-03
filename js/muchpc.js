@@ -686,7 +686,8 @@ function Key(keyCode, fnktm, defaults = [], type = '1x1') {
             fn_macro: -1,
             fn1_macro: -1,
             pn_macro: -1,
-        }, 
+            layer: 0,
+        },
         {
             default_fn: default_fn,
             default_fn1: default_fn1,
@@ -700,7 +701,8 @@ function Key(keyCode, fnktm, defaults = [], type = '1x1') {
             fn_macro: -1,
             fn1_macro: -1,
             pn_macro: -1,
-        }, 
+            layer: 1,
+        },
         {
             default_fn: default_fn,
             default_fn1: default_fn1,
@@ -714,7 +716,8 @@ function Key(keyCode, fnktm, defaults = [], type = '1x1') {
             fn_macro: -1,
             fn1_macro: -1,
             pn_macro: -1,
-        }, 
+            layer: 2,
+        },
         {
             default_fn: default_fn,
             default_fn1: default_fn1,
@@ -728,6 +731,7 @@ function Key(keyCode, fnktm, defaults = [], type = '1x1') {
             fn_macro: -1,
             fn1_macro: -1,
             pn_macro: -1,
+            layer: 3,
         }
         ],
         type: type
