@@ -1,7 +1,7 @@
 Vue.directive( "sortable", function( value ) {
     var that = this,
         key = this.arg;
-  
+
     value = value || {};
     value.onUpdate = function( e ) {
       var vm = that.vm,
@@ -11,7 +11,7 @@ Vue.directive( "sortable", function( value ) {
       array.splice( e.newIndex, 0, target );
       vm.$emit( "sort", target, e.oldIndex, e.newIndex );
     };
-  
+
     Sortable.create(value, value );
 });
 
@@ -738,7 +738,7 @@ function Key(keyCode, fnktm, defaults = [], type = '1x1') {
     };
 }
 
-function FK(keyCode=null, type="1x1") { // FullKeyboard Key 
+function FK(keyCode=null, type="1x1") { // FullKeyboard Key
     return {code: keyCode, type: type};
 }
 
@@ -753,24 +753,24 @@ function defaultRows() {
             Key('17', 19, ['0', '3E', 'Light']),
             Key('1C', 26, ['EE', '3F', 'Light']),
             Key('18', 27, ['4B', '40', 'Light']),
-            Key('C', 34, ['52', '41']), 
-            Key('12', 35, ['4E', '42']), 
-            Key('13', 42, ['46', '43']), 
-            Key('4C', 45, ['47', '44']), 
+            Key('C', 34, ['52', '41']),
+            Key('12', 35, ['4E', '42']),
+            Key('13', 42, ['46', '43']),
+            Key('4C', 45, ['47', '44']),
             Key('2A', 40, ['48', '45'])
         ],
         [
-            Key('2B', 4, ['39', '1E'], '1x1_25'), 
-            Key('4', 5, ['F2', '1F']), 
-            Key('16', 12, ['F0', '20']), 
-            Key('7', 13, ['F3', '21']), 
-            Key('9', 20, ['0', '22']), 
-            Key('A', 21, ['0', '23']), 
-            Key('B', 28, ['4A', '24']), 
-            Key('D', 29, ['50', '25']), 
-            Key('E', 36, ['51', '26']), 
-            Key('F', 37, ['4F', '27']), 
-            Key('33', 44, ['49', '2D']), 
+            Key('2B', 4, ['39', '1E'], '1x1_25'),
+            Key('4', 5, ['F2', '1F']),
+            Key('16', 12, ['F0', '20']),
+            Key('7', 13, ['F3', '21']),
+            Key('9', 20, ['0', '22']),
+            Key('A', 21, ['0', '23']),
+            Key('B', 28, ['4A', '24']),
+            Key('D', 29, ['50', '25']),
+            Key('E', 36, ['51', '26']),
+            Key('F', 37, ['4F', '27']),
+            Key('33', 44, ['49', '2D']),
             Key('28', 32, ['0', '2E'], '1x1_75')
         ],
         [
@@ -1005,7 +1005,7 @@ var app = new Vue({
                 keyChange: [],
                 macro: [],
             }
-            
+
             // initialize functionSet index [0 - profile 0 FN, 1 - profile 1 FN1, 2 - profile 3 PN]
             // note: 50 is default - bind to nothing instead of 0 (firmware bug)
             var layerIndex = {"FN": 0, "FN1": 1, "PN": 2};
@@ -1178,7 +1178,7 @@ var app = new Vue({
             this.default_timer = 10;
             this.editing_macro_index = index;
             this.editing_macro = {
-                title: this.macros[index].title, 
+                title: this.macros[index].title,
                 events: this.macros[index].events.concat([]),
                 repeats: this.macros[index].repeats,
                 type: this.macros[index].type
@@ -1299,7 +1299,7 @@ var app = new Vue({
                 } catch (err) {
                     console.error(err);
                     UIkit.notification('<i class="fas fa-exclamation-circle"></i> Failed to open.', {pos: 'bottom-right',status:'danger'}).$el.classList.add('uk-box-shadow-large');
-                }   
+                }
             }
             try {
                 reader.readAsText(file[0]);
@@ -1343,7 +1343,7 @@ var app = new Vue({
                 } catch (err) {
                     console.error(err);
                     UIkit.notification('<i class="fas fa-exclamation-circle"></i> Failed to open.', {pos: 'bottom-right',status:'danger'}).$el.classList.add('uk-box-shadow-large');
-                }   
+                }
             }
             try {
                 reader.readAsText(file[0]);
@@ -1371,7 +1371,7 @@ var app = new Vue({
             if (!sortable || sortable.mpcSet) return;
             UIkit.util.on('.uk-sortable', 'start', function(e) {
                 var index = null;
-                
+
                 e.target.childNodes.forEach(function (node, i) {
                     if (node == e.detail[1]) {
                         index = i;
@@ -1381,7 +1381,7 @@ var app = new Vue({
             });
             UIkit.util.on('.uk-sortable', 'moved', function(e) {
                 var index = null;
-                
+
                 e.target.childNodes.forEach(function (node, i) {
                     if (node == e.detail[1]) {
                         index = i;
@@ -1480,7 +1480,7 @@ var app = new Vue({
                         profileIndex: [parseInt(row.profileIndex)],
                         macroIndex: _this.numberTo2Bytes(0),
                         itemDataShift: _this.numberTo4Bytes(profilePos)
-                    }); 
+                    });
                     profilePos += profileLength;
                 });
                 //key change
