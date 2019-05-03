@@ -1127,6 +1127,11 @@ var app = new Vue({
 
             return result;
         },
+        onEachLayer: function (keys) {
+            const layers = keys.map(key => key.layer)
+
+            return [...new Set(layers)].length === 4
+        },
         openFile: function (callback) {
             var inputFile = document.getElementById("importFile");
             if (this.fileListener) {
