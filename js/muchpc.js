@@ -1112,6 +1112,21 @@ var app = new Vue({
         },
     },
     methods: {
+        findKeyByKeycode: function (code) {
+            let result = [];
+
+            this.rows.map(row => {
+                row.map(key => {
+                    key.profiles.map(profile => {
+                        if (profile.bind === code) {
+                            result.push(profile);
+                        }
+                    })
+                })
+            })
+
+            return result;
+        },
         openFile: function (callback) {
             var inputFile = document.getElementById("importFile");
             if (this.fileListener) {
