@@ -51,10 +51,8 @@
 
             <div class="uk-padding-small uk-text-right">
                 <button class="uk-button-small uk-button-default uk-box-shadow-small" @click="openFile(importFile)">Open JSON</button>
-                <button class="uk-button-small uk-button-default uk-box-shadow-small" @click="exportFile()">Save as
-                    JSON</button>
-                <button class="uk-button-small uk-button-primary uk-box-shadow-small" @click="generate()">Generate
-                    Binary File</button>
+                <button class="uk-button-small uk-button-default uk-box-shadow-small" :disabled="hasErrors" @click="exportFile()">Save as JSON</button>
+                <button class="uk-button-small uk-button-primary uk-box-shadow-small" :disabled="hasErrors" @click="generate()">Generate Binary File</button>
             </div>
             <div id="container" class="uk-padding uk-padding-remove-top">
                 <div class="core">
